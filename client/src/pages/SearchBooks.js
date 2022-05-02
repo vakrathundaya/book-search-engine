@@ -122,6 +122,11 @@ const SearchBooks = () => {
                 <Card.Body>
                   <Card.Title>{book.title}</Card.Title>
                   <p className='small'>Authors: {book.authors}</p>
+                  {book.link && (
+                    <Card.Link href={book.link}>
+                      See it on Google Books
+                    </Card.Link>
+                  )}
                   <Card.Text>{book.description}</Card.Text>
                   {Auth.loggedIn() && (
                     <Button
@@ -135,6 +140,7 @@ const SearchBooks = () => {
                   )}
                 </Card.Body>
               </Card>
+              
             );
           })}
         </CardColumns>
