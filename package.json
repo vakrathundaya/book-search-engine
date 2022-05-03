@@ -1,7 +1,7 @@
 {
   "name": "googlebooks-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Full stack MERN application for searching Google Books API with React front end, MongoDB database, and Node.js/Express.js server and API",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
@@ -9,9 +9,8 @@
     "install": "cd server && npm i && cd ../client && npm i",
     "build": "cd client && npm run build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Stephen Roddewig (Captain63)",
+  "license": "MIT",
   "devDependencies": {
     "concurrently": "^5.1.0"
   }

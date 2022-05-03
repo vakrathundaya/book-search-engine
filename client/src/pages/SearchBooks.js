@@ -68,9 +68,11 @@ const SearchBooks = () => {
     if (!token) {
       return false;
     }
-
+console.log(bookToSave)
     try {
-      await saveBook({ variables: { book: bookToSave }});
+      await saveBook({ 
+        variables:{book:bookToSave}
+      });
 
       // if book successfully saves to user's account, save book id to state
       setSavedBookIds([...savedBookIds, bookToSave.bookId]);
@@ -120,13 +122,8 @@ const SearchBooks = () => {
                   <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' />
                 ) : null}
                 <Card.Body>
-                  <Card.Title>{book.title}</Card.Title>
+                  <Card.Title><a href={book.link}>{book.title}</a></Card.Title>
                   <p className='small'>Authors: {book.authors}</p>
-                  {book.link && (
-                    <Card.Link href={book.link}>
-                      See it on Google Books
-                    </Card.Link>
-                  )}
                   <Card.Text>{book.description}</Card.Text>
                   {Auth.loggedIn() && (
                     <Button
@@ -140,7 +137,6 @@ const SearchBooks = () => {
                   )}
                 </Card.Body>
               </Card>
-              
             );
           })}
         </CardColumns>
